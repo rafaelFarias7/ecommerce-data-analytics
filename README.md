@@ -207,11 +207,11 @@ O notebook inclui:
 
 ---
 
-## 🙋 Autor
+## 🙋 Autores
 
 **Rafael Farias**
-Analytics & Data Science
-CESAR School | GDV Mentoria
+**Victor Simas**
+**Julio Bezerra**
 
 ---
 
