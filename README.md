@@ -209,9 +209,9 @@ O notebook inclui:
 
 ## 🙋 Autores
 
-**Rafael Farias**
-**Victor Simas**
-**Julio Bezerra**
+- **Rafael Farias**  
+- **Victor Simas**  
+- **Julio Bezerra**  
 
 ---
 
