@@ -36,7 +36,6 @@ O objetivo é fornecer um **relatório analítico consistente**, com **tratament
 ## 🗂 Estrutura do Repositório
 
 ```
-
 .
 ├── data/
 │   ├── DIM_Customer.csv
@@ -46,19 +45,34 @@ O objetivo é fornecer um **relatório analítico consistente**, com **tratament
 │   └── DIM_Shopping.csv
 │
 ├── notebooks/
-│   └── ecommerce_analysis.ipynb
+│   ├── ecommerce_analysis.ipynb
+│   └── ecommerce_analysis.py
 │
 ├── reports/
-│   └── Ecommerce_Analytics_Report.pdf
+│   └── Ecommerce_Analytics_Report.md
 │
 ├── kpis/
 │   ├── kpis_by_service.csv
 │   ├── kpis_by_payment.csv
 │   ├── kpis_by_region.csv
-│   └── seasonality_month_region.csv
+│   ├── kpis_by_category.csv
+│   ├── elasticity_discount.csv
+│   ├── seasonality_month_region.csv
+│   └── fact_analytic_clean.csv
 │
 ├── images/
-│   └── correlacao_ecommerce.png
+│   ├── hist_ticket.png
+│   ├── hist_leadtime.png
+│   ├── hist_delay.png
+│   ├── hist_discount.png
+│   ├── box_ticket.png
+│   ├── box_leadtime.png
+│   ├── box_discount.png
+│   └── correlacao.png
+│
+├── sql/
+│   ├── model_joins.sql
+│   └── kpis_examples.sql
 │
 └── README.md
 
@@ -115,9 +129,13 @@ python notebooks/ecommerce_analysis.py
 
 ### ✔ Data Quality
 
-* Tipos de dados corrigidos
-* Datas padronizadas
-* Sem valores nulos críticos
+* Tipos de dados corrigidos (datas em `datetime`, numéricos em `float/int`)
+* Datas padronizadas (`Order_Date`, `D_Date`, `D_Forecast`)
+* Trimming em colunas de texto
+* Remoção de nulos críticos em datas e valores financeiros
+* Verificação de unicidade por pedido (`Id`) e remoção de duplicados em `FACT_Orders`
+* Checagem de integridade de chaves entre fato e dimensões
+* Detecção de outliers por regra do IQR (documentados e filtrados em `df_clean`)
 * Chave central `Id` unificando tabelas
 
 ---
@@ -146,16 +164,16 @@ Variáveis derivadas:
 
 #### **Comerciais**
 
-* Ticket médio
+* Ticket médio (global e por método de pagamento / região / categoria)
 * Conversão por método de pagamento (PIX, crédito, boleto…)
-* Desconto médio
-* Mix de produtos
+* Desconto médio e faixas de desconto
+* Mix de produtos por Category/Subcategory e elasticidade aproximada vs desconto
 
 #### **Sazonalidade**
 
-* Receita por mês
-* Demandas por região
-* Volume mensal por canal
+* Receita por mês e região (`seasonality_month_region.csv`)
+* Demandas por região/UF
+* Volume mensal por canal (se derivado de `DIM_Shopping`)
 
 ---
 
@@ -172,11 +190,11 @@ Variáveis derivadas:
 
 O notebook inclui:
 
-* IC 95% para ticket médio
+* IC 95% para ticket médio (baseado em `df_clean` — sem outliers extremos)
 * IC 95% para atraso médio
 * IC 95% para proporção de atrasos e cancelamentos
-* ICs por *payment* e *service*
-* Verificação de normalidade e independência
+* ICs por *payment* e *service* (via agregações utilizadas em CSV/Power BI)
+* Verificação de normalidade (Shapiro–Wilk) e independência (autocorrelação lag-1)
 
 ---
 
