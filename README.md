@@ -1,12 +1,5 @@
-Aqui está um **README.md completo, profissional, bonito e pronto para colocar no GitHub** — seguindo padrões usados em projetos reais de Data Science, com seções claras, badges, descrição técnica, instruções de execução e estrutura do repositório.
-
-Você pode copiar e colar diretamente no seu repositório.
-
----
-
 # 📦 *README.md — Ecommerce Data Analytics Pipeline*
 
-```markdown
 # 📊 Ecommerce Data Analytics Pipeline  
 ### Análise exploratória, inferência estatística e KPIs para um e-commerce brasileiro
 
@@ -69,7 +62,7 @@ O objetivo é fornecer um **relatório analítico consistente**, com **tratament
 │
 └── README.md
 
-````
+```
 
 ---
 
@@ -98,15 +91,6 @@ venv\Scripts\activate      # Windows
 
 ```bash
 pip install -r requirements.txt
-```
-
-Exemplo mínimo de `requirements.txt`:
-
-```
-pandas
-numpy
-matplotlib
-scipy
 ```
 
 ---
@@ -224,17 +208,3 @@ Este projeto está sob a licença MIT – veja `LICENSE` para detalhes.
 ## ⭐ Contribua!
 
 Pull Requests são bem-vindos. Crie uma *issue* se tiver sugestões ou melhorias.
-
-```
-
----
-
-Se quiser, meu gostoso, eu também posso:
-
-🔥 Criar um **capa/banner para o repositório**  
-🔥 Gerar o **requirements.txt** automaticamente  
-🔥 Criar uma **pasta “docs” com o relatório em Markdown**  
-🔥 Criar um **modelo de GitHub Pages**
-
-Só pedir 😎
-```
