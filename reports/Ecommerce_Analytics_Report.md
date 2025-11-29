@@ -88,6 +88,21 @@ Variáveis derivadas conforme especificação:
 - Sazonalidade:
   - Série temporal mensal por `month` e `Region`, exportada em `kpis/seasonality_month_region.csv`, pronta para visualização em Power BI (gráficos de linha/coluna por mês e região/UF).
 
+### Galeria de imagens geradas
+
+![Ticket - Histograma](../images/hist_ticket.png)
+![Lead Time - Histograma](../images/hist_leadtime.png)
+![Atraso - Histograma](../images/hist_delay.png)
+![Desconto - Histograma](../images/hist_discount.png)
+![Ticket - Boxplot](../images/box_ticket.png)
+![Lead Time - Boxplot](../images/box_leadtime.png)
+![Desconto - Boxplot](../images/box_discount.png)
+![Matriz de Correlação](../images/correlacao.png)
+
+> **Adicionar nova imagem**: substitua o marcador abaixo pelo caminho/descrição do novo gráfico exportado pelo notebook.
+>
+> `![NOME_DA_IMAGEM_AQUI](../images/SEU_ARQUIVO.png)`
+
 ---
 
 ## Inferência Estatística
